@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="AccountsModule.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CardsComponent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DeliverModule.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DeliveryModule.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GasColumns.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AccountsModule.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CardsComponent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeliverModule.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeliveryModule.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GasColumns.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

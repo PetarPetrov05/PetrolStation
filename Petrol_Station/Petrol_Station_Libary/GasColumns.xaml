@@ -1,0 +1,1575 @@
+﻿<UserControl x:Class="Petrol_Station_Libary.GasColumns"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Petrol_Station_Libary"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border Margin="100,100,100,100" Padding="10,10,10,0" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="9"  Direction="270" Color="Black" Opacity="0.3"/>
+            </Border.Effect>
+            <Border.Background>
+                <!-- Use ImageBrush with a blurred image -->
+                <ImageBrush ImageSource="D:\Users\Pepo's PC\Desktop\171a22.png" Stretch="Fill" Opacity="0.5"/>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <!--Колонки-->
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="D:\Downloads\images for GasStation\icons8-gas-station-100.png" Margin="0,0,10,0" HorizontalAlignment="Left" Grid.Column="0"></Image>
+                        <TextBlock Grid.Column="1" Text="Колонки" Foreground="White" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="1">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.05*"/>
+                            </Grid.ColumnDefinitions>
+                            <!--1-->
+                            <Grid x:Name="AfterSellingPetrol1" Visibility="Collapsed" Grid.Column="0" Margin="0,10,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="BackButton1" Background="#0C1017" CornerRadius="5" Height="20" Width="20" MouseLeftButtonDown="BackButton1_MouseLeftButtonDown">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                <TranslateTransform X="0" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Triggers>
+                                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Border.Triggers>
+                                        <TextBlock Text="🡰" HorizontalAlignment="Center" FontSize="8" VerticalAlignment="Center" Foreground="White" />
+                                    </Border>
+                                    <!--ShowCard-->
+                                    <Border x:Name="ShowCard1" Grid.Column="2" CornerRadius="5" Height="20" Width="20">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                <TranslateTransform X="0" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Triggers>
+                                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Border.Triggers>
+                                        <Image x:Name="CardButton1" Source="D:\Downloads\images for GasStation\icons8-card-100.png" MouseLeftButtonDown="CardButton1_MouseLeftButtonDown"></Image>
+                                    </Border>
+                                </Grid>
+                                <TextBlock Grid.Row="0" x:Name="GasTypeLabel1" Text="Гориво" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                                <!--Before Card Clicked-->
+                                <Border x:Name="SellingComp1" Grid.Row="1" BorderBrush="White" BorderThickness="0.2" >
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--Price and litres-->
+                                        <Grid Margin="5,0,0,0" Grid.Column="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="1" Text="Цена л." Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"></TextBlock>
+                                            <TextBlock Grid.Row="2" Text="0.00" x:Name="PriceTextBlock1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"></TextBlock>
+                                            <TextBox x:Name="litriInput1" Foreground="White" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" Width="42" Grid.Row="3" Background="#0C1017" TextChanged="litriInput1_TextChanged">
+                                                <TextBox.Resources>
+                                                    <Style TargetType="TextBox">
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="TextBox">
+                                                                    <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                                                        <Border.RenderTransform>
+                                                                            <TransformGroup>
+                                                                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                                <TranslateTransform X="0"/>
+                                                                            </TransformGroup>
+                                                                        </Border.RenderTransform>
+                                                                        <Grid>
+                                                                            <ScrollViewer x:Name="PART_ContentHost" />
+                                                                        </Grid>
+                                                                    </Border>
+                                                                    <ControlTemplate.Triggers>
+                                                                        <EventTrigger RoutedEvent="MouseEnter">
+                                                                            <BeginStoryboard>
+                                                                                <Storyboard>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.03" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.03" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-4" Duration="0:0:0.2"/>
+                                                                                </Storyboard>
+                                                                            </BeginStoryboard>
+                                                                        </EventTrigger>
+                                                                        <EventTrigger RoutedEvent="MouseLeave">
+                                                                            <BeginStoryboard>
+                                                                                <Storyboard>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.2"/>
+                                                                                </Storyboard>
+                                                                            </BeginStoryboard>
+                                                                        </EventTrigger>
+                                                                    </ControlTemplate.Triggers>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </TextBox.Resources>
+                                            </TextBox>
+                                        </Grid>
+                                        <!--ButtonCalc-->
+                                        <Border Grid.Column="1" BorderBrush="White" BorderThickness="0.2">
+                                            <Border x:Name="border1" Background="#0C1017" CornerRadius="10" Height="30" Width="30" MouseLeftButtonDown="border1_MouseLeftButtonDown">
+                                                <Border.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                        <TranslateTransform X="0" />
+                                                    </TransformGroup>
+                                                </Border.RenderTransform>
+                                                <Border.Triggers>
+                                                    <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+                                                    <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+                                                </Border.Triggers>
+                                                <Grid>
+                                                    <TextBlock x:Name="arrow1" Text="➜" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                                    <Image x:Name="MoneyImage1" Visibility="Hidden" Width="20" Source="D:\VisualStudio\Projects\Petrol_Station\Images\icons8-money-64.png"  VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+                                                </Grid>
+
+                                            </Border>
+                                        </Border>
+                                        <!--selling part-->
+                                        <Grid Grid.Column="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Border BorderBrush="White" BorderThickness="0.2" Background="#0C1017" CornerRadius="10" Grid.Row="1" Grid.RowSpan="2">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <!--GasPrice-->
+                                                    <Grid Grid.Row="0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock HorizontalAlignment="Right" Text="Гориво-" VerticalAlignment="Bottom" Foreground="White" FontSize="10"></TextBlock>
+                                                        <TextBlock Grid.Column="1" x:Name="fuelPrice1" Text="0.00" VerticalAlignment="Bottom" Foreground="White" FontSize="10"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0" Text="Отстъпка-" Foreground="White" FontSize="10" HorizontalAlignment="Right"></TextBlock>
+                                                        <TextBlock Grid.Column="1" x:Name="DiscountCard1" Text="0.00" Foreground="White" FontSize="10"></TextBlock>
+                                                    </Grid>
+                                                    <!--Final Price-->
+                                                    <Border Grid.Row="3" BorderThickness="0,1,0,0">
+                                                        <Border.BorderBrush>
+                                                            <VisualBrush>
+                                                                <VisualBrush.Visual>
+                                                                    <Rectangle Stroke="White" StrokeDashArray="1 2" StrokeThickness="5" Width="110" Height="1"/>
+                                                                </VisualBrush.Visual>
+                                                            </VisualBrush>
+                                                        </Border.BorderBrush>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="1.5*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Цена:" Foreground="White" FontSize="11" HorizontalAlignment="Right"></TextBlock>
+                                                            <TextBlock x:Name="FinalPrice1" Grid.Column="1" Text="0.00" Foreground="White" FontSize="11"></TextBlock>
+                                                        </Grid>
+                                                    </Border>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                                <!--After Card Clicked-->
+                                <Border x:Name="BorderAfterCardClicked1" Grid.Row="1" BorderBrush="White" BorderThickness="0.2" Visibility="Collapsed">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Номер на картата" Grid.Row="0" Foreground="White" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        <TextBox x:Name="CardInput1" Grid.Row="1" VerticalAlignment="Center" Foreground="White" Height="18" HorizontalAlignment="Center"  Width="80" Background="#0C1017">
+                                            <TextBox.Resources>
+                                                <Style TargetType="TextBox">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="TextBox">
+                                                                <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                                                    <Border.RenderTransform>
+                                                                        <TransformGroup>
+                                                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                            <TranslateTransform X="0"/>
+                                                                        </TransformGroup>
+                                                                    </Border.RenderTransform>
+                                                                    <Grid>
+                                                                        <ScrollViewer x:Name="PART_ContentHost" />
+                                                                    </Grid>
+                                                                </Border>
+                                                                <ControlTemplate.Triggers>
+                                                                    <EventTrigger RoutedEvent="MouseEnter">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-4" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                    <EventTrigger RoutedEvent="MouseLeave">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBox.Resources>
+                                        </TextBox>
+                                        <Border x:Name="addDiscount1" Background="#0C1017" CornerRadius="8" Width="25" BorderThickness="0.5" BorderBrush="White" Height="25" Grid.Row="2" MouseLeftButtonDown="addDiscount1_MouseLeftButtonDown">
+                                            <Border.Resources>
+                                                <ScaleTransform x:Key="HoverScale" ScaleX="1" ScaleY="1" />
+                                            </Border.Resources>
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="RenderTransform" Value="{StaticResource HoverScale}" />
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Trigger.EnterActions>
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.05" Duration="0:0:0.2" />
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.05" Duration="0:0:0.2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </Trigger.EnterActions>
+                                                            <Trigger.ExitActions>
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.2" />
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </Trigger.ExitActions>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock Text="+" Margin="0,0,0,2" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Border Margin="0,10,0,0" Grid.Column="0" BorderBrush="White" BorderThickness="0.2">
+                                <Grid x:Name="BeforeBuyingPetrol1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                        <Grid Grid.Column="0">
+                                        <TextBlock Text="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"></TextBlock>
+                                    </Grid>
+                                    
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Border x:Name="Benzin1" Grid.Row="1" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Benzin1_MouseLeftButtonDown">
+                                            <TextBlock Text="Бензин" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <Border x:Name="Diesel1" Grid.Row="3" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Diesel1_MouseLeftButtonDown">
+                                            <TextBlock Text="Дизел" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <Border x:Name="Gas1" Grid.Row="5" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Gas1_MouseLeftButtonDown">
+                                            <TextBlock Text="Газ" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                            <!--2-->
+                            <Grid x:Name="AfterSellingPetrol2" Visibility="Collapsed" Grid.Column="1" Margin="0,10,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="BackButton2" Background="#0C1017" CornerRadius="5" Height="20" Width="20" MouseLeftButtonDown="BackButton2_MouseLeftButtonDown">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                <TranslateTransform X="0" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Triggers>
+                                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Border.Triggers>
+                                        <TextBlock Text="🡰" HorizontalAlignment="Center" FontSize="8" VerticalAlignment="Center" Foreground="White" />
+                                    </Border>
+                                    <!--ShowCard-->
+                                    <Border x:Name="ShowCard2" Grid.Column="2" CornerRadius="5" Height="20" Width="20">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                <TranslateTransform X="0" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Triggers>
+                                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Border.Triggers>
+                                        <Image x:Name="CardButton2" Source="D:\Downloads\images for GasStation\icons8-card-100.png" MouseLeftButtonDown="CardButton2_MouseLeftButtonDown"></Image>
+                                    </Border>
+                                </Grid>
+                                <TextBlock Grid.Row="0" x:Name="GasTypeLabel2" Text="Гориво" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                                <!--Before Card Clicked-->
+                                <Border x:Name="SellingComp2" Grid.Row="1" BorderBrush="White" BorderThickness="0.2" >
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--Price and litres-->
+                                        <Grid Margin="5,0,0,0" Grid.Column="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="1" Text="Цена л." Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"></TextBlock>
+                                            <TextBlock Grid.Row="2" Text="0.00" x:Name="PriceTextBlock2" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"></TextBlock>
+                                            <TextBox x:Name="litriInput2" Foreground="White" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" Width="42" Grid.Row="3" Background="#0C1017" TextChanged="litriInput2_TextChanged">
+                                                <TextBox.Resources>
+                                                    <Style TargetType="TextBox">
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="TextBox">
+                                                                    <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                                                        <Border.RenderTransform>
+                                                                            <TransformGroup>
+                                                                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                                <TranslateTransform X="0"/>
+                                                                            </TransformGroup>
+                                                                        </Border.RenderTransform>
+                                                                        <Grid>
+                                                                            <ScrollViewer x:Name="PART_ContentHost" />
+                                                                        </Grid>
+                                                                    </Border>
+                                                                    <ControlTemplate.Triggers>
+                                                                        <EventTrigger RoutedEvent="MouseEnter">
+                                                                            <BeginStoryboard>
+                                                                                <Storyboard>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.03" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.03" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-4" Duration="0:0:0.2"/>
+                                                                                </Storyboard>
+                                                                            </BeginStoryboard>
+                                                                        </EventTrigger>
+                                                                        <EventTrigger RoutedEvent="MouseLeave">
+                                                                            <BeginStoryboard>
+                                                                                <Storyboard>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.2"/>
+                                                                                </Storyboard>
+                                                                            </BeginStoryboard>
+                                                                        </EventTrigger>
+                                                                    </ControlTemplate.Triggers>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </TextBox.Resources>
+                                            </TextBox>
+                                        </Grid>
+                                        <!--ButtonCalc-->
+                                        <Border Grid.Column="1" BorderBrush="White" BorderThickness="0.2">
+                                            <Border x:Name="border2" Background="#0C1017" CornerRadius="10" Height="30" Width="30">
+                                                <Border.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                        <TranslateTransform X="0" />
+                                                    </TransformGroup>
+                                                </Border.RenderTransform>
+                                                <Border.Triggers>
+                                                    <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+                                                    <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+                                                </Border.Triggers>
+                                                <TextBlock Text="➜" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                            </Border>
+                                        </Border>
+                                        <!--selling part-->
+                                        <Grid Grid.Column="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Border BorderBrush="White" BorderThickness="0.2" Background="#0C1017" CornerRadius="10" Grid.Row="1" Grid.RowSpan="2">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <!--GasPrice-->
+                                                    <Grid Grid.Row="0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock HorizontalAlignment="Right" Text="Гориво-" VerticalAlignment="Bottom" Foreground="White" FontSize="10"></TextBlock>
+                                                        <TextBlock Grid.Column="1" x:Name="fuelPrice2" Text="0.00" VerticalAlignment="Bottom" Foreground="White" FontSize="10"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0" Text="Отстъпка-" Foreground="White" FontSize="10" HorizontalAlignment="Right"></TextBlock>
+                                                        <TextBlock Grid.Column="1" x:Name="DiscountCard2" Text="0.00" Foreground="White" FontSize="10"></TextBlock>
+                                                    </Grid>
+                                                    <!--Final Price-->
+                                                    <Border Grid.Row="3" BorderThickness="0,1,0,0">
+                                                        <Border.BorderBrush>
+                                                            <VisualBrush>
+                                                                <VisualBrush.Visual>
+                                                                    <Rectangle Stroke="White" StrokeDashArray="1 2" StrokeThickness="5" Width="110" Height="1"/>
+                                                                </VisualBrush.Visual>
+                                                            </VisualBrush>
+                                                        </Border.BorderBrush>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="1*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Цена:" Foreground="White" FontSize="11" HorizontalAlignment="Right"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="0.00" Foreground="White" FontSize="11"></TextBlock>
+                                                        </Grid>
+                                                    </Border>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                                <!--After Card Clicked-->
+                                <Border x:Name="BorderAfterCardClicked2" Grid.Row="1" BorderBrush="White" BorderThickness="0.2" Visibility="Collapsed">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Номер на картата" Grid.Row="0" Foreground="White" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        <TextBox x:Name="CardInput2" Grid.Row="1" VerticalAlignment="Center" Foreground="White" Height="18" HorizontalAlignment="Center"  Width="80" Background="#0C1017">
+                                            <TextBox.Resources>
+                                                <Style TargetType="TextBox">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="TextBox">
+                                                                <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                                                    <Border.RenderTransform>
+                                                                        <TransformGroup>
+                                                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                            <TranslateTransform X="0"/>
+                                                                        </TransformGroup>
+                                                                    </Border.RenderTransform>
+                                                                    <Grid>
+                                                                        <ScrollViewer x:Name="PART_ContentHost" />
+                                                                    </Grid>
+                                                                </Border>
+                                                                <ControlTemplate.Triggers>
+                                                                    <EventTrigger RoutedEvent="MouseEnter">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-4" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                    <EventTrigger RoutedEvent="MouseLeave">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBox.Resources>
+                                        </TextBox>
+                                        <Border x:Name="addDiscount2" Background="#0C1017" CornerRadius="8" Width="25" BorderThickness="0.5" BorderBrush="White" Height="25" Grid.Row="2" MouseLeftButtonDown="addDiscount2_MouseLeftButtonDown">
+                                            <Border.Resources>
+                                                <ScaleTransform x:Key="HoverScale" ScaleX="1" ScaleY="1" />
+                                            </Border.Resources>
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="RenderTransform" Value="{StaticResource HoverScale}" />
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Trigger.EnterActions>
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.05" Duration="0:0:0.2" />
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.05" Duration="0:0:0.2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </Trigger.EnterActions>
+                                                            <Trigger.ExitActions>
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.2" />
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </Trigger.ExitActions>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock Text="+" Margin="0,0,0,2" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Border Margin="0,10,0,0" Grid.Column="1" BorderBrush="White" BorderThickness="0.2">
+                                <Grid x:Name="BeforeBuyingPetrol2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="2" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"></TextBlock>
+                                    </Grid>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Border x:Name="Benzin2" Grid.Row="1" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Benzin2_MouseLeftButtonDown">
+                                            <TextBlock Text="Бензин" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <Border x:Name="Diesel2" Grid.Row="3" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Diesel2_MouseLeftButtonDown">
+                                            <TextBlock Text="Дизел" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <Border x:Name="Gas2" Grid.Row="5" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Gas2_MouseLeftButtonDown">
+                                            <TextBlock Text="Газ" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.05*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <!--3-->
+                            <Grid x:Name="AfterSellingPetrol3" Visibility="Collapsed" Grid.Column="0" Margin="0,0,0,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="BackButton3" Background="#0C1017" CornerRadius="5" Height="20" Width="20" MouseLeftButtonDown="BackButton3_MouseLeftButtonDown">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                <TranslateTransform X="0" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Triggers>
+                                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Border.Triggers>
+                                        <TextBlock Text="🡰" HorizontalAlignment="Center" FontSize="8" VerticalAlignment="Center" Foreground="White" />
+                                    </Border>
+                                    <!--ShowCard-->
+                                    <Border x:Name="ShowCard3" Grid.Column="2" CornerRadius="5" Height="20" Width="20">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                <TranslateTransform X="0" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Triggers>
+                                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Border.Triggers>
+                                        <Image x:Name="CardButton3" Source="D:\Downloads\images for GasStation\icons8-card-100.png" MouseLeftButtonDown="CardButton3_MouseLeftButtonDown"></Image>
+                                    </Border>
+                                </Grid>
+                                <TextBlock Grid.Row="0" x:Name="GasTypeLabel3" Text="Гориво" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                                <!--Before Card Clicked-->
+                                <Border x:Name="SellingComp3" Grid.Row="1" BorderBrush="White" BorderThickness="0.2" >
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!--Price and litres-->
+                                        <Grid Margin="5,0,0,0" Grid.Column="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="1" Text="Цена л." Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"></TextBlock>
+                                            <TextBlock Grid.Row="2" Text="0.00" x:Name="PriceTextBlock3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"></TextBlock>
+                                            <TextBox x:Name="litriInput3" Foreground="White" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" Width="42" Grid.Row="3" Background="#0C1017" TextChanged="litriInput3_TextChanged">
+                                                <TextBox.Resources>
+                                                    <Style TargetType="TextBox">
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="TextBox">
+                                                                    <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                                                        <Border.RenderTransform>
+                                                                            <TransformGroup>
+                                                                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                                <TranslateTransform X="0"/>
+                                                                            </TransformGroup>
+                                                                        </Border.RenderTransform>
+                                                                        <Grid>
+                                                                            <ScrollViewer x:Name="PART_ContentHost" />
+                                                                        </Grid>
+                                                                    </Border>
+                                                                    <ControlTemplate.Triggers>
+                                                                        <EventTrigger RoutedEvent="MouseEnter">
+                                                                            <BeginStoryboard>
+                                                                                <Storyboard>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.03" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.03" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-4" Duration="0:0:0.2"/>
+                                                                                </Storyboard>
+                                                                            </BeginStoryboard>
+                                                                        </EventTrigger>
+                                                                        <EventTrigger RoutedEvent="MouseLeave">
+                                                                            <BeginStoryboard>
+                                                                                <Storyboard>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                                                                                    <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.2"/>
+                                                                                </Storyboard>
+                                                                            </BeginStoryboard>
+                                                                        </EventTrigger>
+                                                                    </ControlTemplate.Triggers>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </TextBox.Resources>
+                                            </TextBox>
+                                        </Grid>
+                                        <!--ButtonCalc-->
+                                        <Border Grid.Column="1" BorderBrush="White" BorderThickness="0.2">
+                                            <Border x:Name="border3" Background="#0C1017" CornerRadius="10" Height="30" Width="30">
+                                                <Border.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                        <TranslateTransform X="0" />
+                                                    </TransformGroup>
+                                                </Border.RenderTransform>
+                                                <Border.Triggers>
+                                                    <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+                                                    <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+                                                </Border.Triggers>
+                                                <TextBlock Text="➜" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                            </Border>
+                                        </Border>
+                                        <!--selling part-->
+                                        <Grid Grid.Column="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Border BorderBrush="White" BorderThickness="0.2" Background="#0C1017" CornerRadius="10" Grid.Row="1" Grid.RowSpan="2">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <!--GasPrice-->
+                                                    <Grid Grid.Row="0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock HorizontalAlignment="Right" Text="Гориво-" VerticalAlignment="Bottom" Foreground="White" FontSize="10"></TextBlock>
+                                                        <TextBlock Grid.Column="1" x:Name="fuelPrice3" Text="0.00" VerticalAlignment="Bottom" Foreground="White" FontSize="10"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0" Text="Отстъпка-" Foreground="White" FontSize="10" HorizontalAlignment="Right"></TextBlock>
+                                                        <TextBlock Grid.Column="1" x:Name="DiscountCard3" Text="0.00" Foreground="White" FontSize="10"></TextBlock>
+                                                    </Grid>
+                                                    <!--Final Price-->
+                                                    <Border Grid.Row="3" BorderThickness="0,1,0,0">
+                                                        <Border.BorderBrush>
+                                                            <VisualBrush>
+                                                                <VisualBrush.Visual>
+                                                                    <Rectangle Stroke="White" StrokeDashArray="1 2" StrokeThickness="5" Width="110" Height="1"/>
+                                                                </VisualBrush.Visual>
+                                                            </VisualBrush>
+                                                        </Border.BorderBrush>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="1*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Цена:" Foreground="White" FontSize="11" HorizontalAlignment="Right"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="0.00" Foreground="White" FontSize="11"></TextBlock>
+                                                        </Grid>
+                                                    </Border>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                                <!--After Card Clicked-->
+                                <Border x:Name="BorderAfterCardClicked3" Grid.Row="1" BorderBrush="White" BorderThickness="0.2" Visibility="Collapsed">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Номер на картата" Grid.Row="0" Foreground="White" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        <TextBox x:Name="CardInput3" Grid.Row="1" VerticalAlignment="Center" Foreground="White" Height="18" HorizontalAlignment="Center"  Width="80" Background="#0C1017">
+                                            <TextBox.Resources>
+                                                <Style TargetType="TextBox">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="TextBox">
+                                                                <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                                                    <Border.RenderTransform>
+                                                                        <TransformGroup>
+                                                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                            <TranslateTransform X="0"/>
+                                                                        </TransformGroup>
+                                                                    </Border.RenderTransform>
+                                                                    <Grid>
+                                                                        <ScrollViewer x:Name="PART_ContentHost" />
+                                                                    </Grid>
+                                                                </Border>
+                                                                <ControlTemplate.Triggers>
+                                                                    <EventTrigger RoutedEvent="MouseEnter">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-4" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                    <EventTrigger RoutedEvent="MouseLeave">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBox.Resources>
+                                        </TextBox>
+                                        <Border x:Name="addDiscount3" Background="#0C1017" CornerRadius="8" Width="25" BorderThickness="0.5" BorderBrush="White" Height="25" Grid.Row="2" MouseLeftButtonDown="addDiscount3_MouseLeftButtonDown">
+                                            <Border.Resources>
+                                                <ScaleTransform x:Key="HoverScale" ScaleX="1" ScaleY="1" />
+                                            </Border.Resources>
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="RenderTransform" Value="{StaticResource HoverScale}" />
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Trigger.EnterActions>
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.05" Duration="0:0:0.2" />
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.05" Duration="0:0:0.2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </Trigger.EnterActions>
+                                                            <Trigger.ExitActions>
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.2" />
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </Trigger.ExitActions>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock Text="+" Margin="0,0,0,2" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <!--after card clicked-->
+                           
+                            <Border Margin="0,0,0,10" Grid.Column="0" BorderBrush="White" BorderThickness="0.2">
+                                <!--in the begining of the third-->
+                                <Grid x:Name="BeforeBuyingPetrol3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="3" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"></TextBlock>
+                                    </Grid>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Border x:Name="Benzin3" Grid.Row="1" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Benzin3_MouseLeftButtonDown">
+                                            <TextBlock Text="Бензин" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <Border x:Name="Diesel3" Grid.Row="3" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Diesel3_MouseLeftButtonDown">
+                                            <TextBlock Text="Дизел" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <Border x:Name="Gas3" Grid.Row="5" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Gas3_MouseLeftButtonDown">
+                                            <TextBlock Text="Газ" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                            <!--4-->
+                            <Grid x:Name="AfterSellingPetrol" Visibility="Collapsed" Grid.Column="1" Margin="0,0,0,10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="3*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="5*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="BackButton" Background="#0C1017" CornerRadius="5" Height="20" Width="20" MouseLeftButtonDown="BackButton_MouseLeftButtonDown">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                <TranslateTransform X="0" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Triggers>
+                                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Border.Triggers>
+                                        <TextBlock Text="🡰" HorizontalAlignment="Center" FontSize="8" VerticalAlignment="Center" Foreground="White" />
+                                    </Border>
+                                    <!--ShowCard-->
+                                    <Border x:Name="ShowCard" Grid.Column="2" CornerRadius="5" Height="20" Width="20">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                <TranslateTransform X="0" />
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <Border.Triggers>
+                                            <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Border.Triggers>
+                                        <Image x:Name="CardButton" Source="D:\Downloads\images for GasStation\icons8-card-100.png" MouseLeftButtonDown="CardButton_MouseLeftButtonDown"></Image>
+                                    </Border>
+                                </Grid>
+                                <TextBlock Grid.Row="0" x:Name="GasTypeLabel" Text="Гориво" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                                <!--Before Card Clicked-->
+                                <Border x:Name="SellingComp" Grid.Row="1" BorderBrush="White" BorderThickness="0.2" >
+                                    <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--Price and litres-->
+                                    <Grid Margin="5,0,0,0" Grid.Column="0">
+                                        <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="2*"/>
+                                                <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="1" Text="Цена л." Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"></TextBlock>
+                                            <TextBlock Grid.Row="2" Text="0.00" x:Name="PriceTextBlock4" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"></TextBlock>
+                                        <TextBox x:Name="litriInput" Foreground="White" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" Width="42" Grid.Row="3" Background="#0C1017" TextChanged="litriInput_TextChanged">
+                                            <TextBox.Resources>
+                                                <Style TargetType="TextBox">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="TextBox">
+                                                                <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                                                    <Border.RenderTransform>
+                                                                        <TransformGroup>
+                                                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                            <TranslateTransform X="0"/>
+                                                                        </TransformGroup>
+                                                                    </Border.RenderTransform>
+                                                                    <Grid>
+                                                                        <ScrollViewer x:Name="PART_ContentHost" />
+                                                                    </Grid>
+                                                                </Border>
+                                                                <ControlTemplate.Triggers>
+                                                                    <EventTrigger RoutedEvent="MouseEnter">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-4" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                    <EventTrigger RoutedEvent="MouseLeave">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBox.Resources>
+                                        </TextBox>
+                                    </Grid>
+                                        <!--ButtonCalc-->
+                                        <Border Grid.Column="1" BorderBrush="White" BorderThickness="0.2">
+                                            <Border x:Name="border" Background="#0C1017" CornerRadius="10" Height="30" Width="30">
+                                                <Border.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                        <TranslateTransform X="0" />
+                                                    </TransformGroup>
+                                                </Border.RenderTransform>
+                                                <Border.Triggers>
+                                                    <EventTrigger RoutedEvent="Border.MouseEnter">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-3" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+                                                    <EventTrigger RoutedEvent="Border.MouseLeave">
+                                                        <BeginStoryboard>
+                                                            <Storyboard>
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.3" />
+                                                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.3" />
+                                                            </Storyboard>
+                                                        </BeginStoryboard>
+                                                    </EventTrigger>
+                                                </Border.Triggers>
+                                                <TextBlock Text="➜" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" />
+                                            </Border>
+                                        </Border>
+                                        <!--selling part-->
+                                        <Grid Grid.Column="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="3*"/>
+                                                <RowDefinition Height="1*"/>
+                                                <RowDefinition Height="1*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Border BorderBrush="White" BorderThickness="0.2" Background="#0C1017" CornerRadius="10" Grid.Row="1" Grid.RowSpan="2">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <!--GasPrice-->
+                                                    <Grid Grid.Row="0">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock HorizontalAlignment="Right" Text="Гориво-" VerticalAlignment="Bottom" Foreground="White" FontSize="10"></TextBlock>
+                                                        <TextBlock x:Name="fuelPrice4" Grid.Column="1" Text="0.00" VerticalAlignment="Bottom" Foreground="White" FontSize="10"></TextBlock>
+                                                    </Grid>
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1.5*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0" Text="Отстъпка-" Foreground="White" FontSize="10" HorizontalAlignment="Right"></TextBlock>
+                                                        <TextBlock Grid.Column="1" x:Name="DiscountCard4" Text="0.00" Foreground="White" FontSize="10"></TextBlock>
+                                                    </Grid>
+                                                    <!--Final Price-->
+                                                    <Border Grid.Row="3" BorderThickness="0,1,0,0">
+                                                        <Border.BorderBrush>
+                                                            <VisualBrush>
+                                                                <VisualBrush.Visual>
+                                                                    <Rectangle Stroke="White" StrokeDashArray="1 2" StrokeThickness="5" Width="110" Height="1"/>
+                                                                </VisualBrush.Visual>
+                                                            </VisualBrush>
+                                                        </Border.BorderBrush>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="1*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0" Text="Цена:" Foreground="White" FontSize="11" HorizontalAlignment="Right"></TextBlock>
+                                                            <TextBlock Grid.Column="1" Text="0.00" Foreground="White" FontSize="11"></TextBlock>
+                                                        </Grid>
+                                                    </Border>
+                                                </Grid>
+                                            </Border>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                                <!--After Card Clicked-->
+                                <Border x:Name="BorderAfterCardClicked" Grid.Row="1" BorderBrush="White" BorderThickness="0.2" Visibility="Collapsed">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Номер на картата" Grid.Row="0" Foreground="White" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                                        <TextBox x:Name="CardInput" Grid.Row="1" VerticalAlignment="Center" Foreground="White" Height="18" HorizontalAlignment="Center"  Width="80" Background="#0C1017">
+                                            <TextBox.Resources>
+                                                <Style TargetType="TextBox">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="TextBox">
+                                                                <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="5">
+                                                                    <Border.RenderTransform>
+                                                                        <TransformGroup>
+                                                                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                            <TranslateTransform X="0"/>
+                                                                        </TransformGroup>
+                                                                    </Border.RenderTransform>
+                                                                    <Grid>
+                                                                        <ScrollViewer x:Name="PART_ContentHost" />
+                                                                    </Grid>
+                                                                </Border>
+                                                                <ControlTemplate.Triggers>
+                                                                    <EventTrigger RoutedEvent="MouseEnter">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1.03" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="-4" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                    <EventTrigger RoutedEvent="MouseLeave">
+                                                                        <BeginStoryboard>
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                                                                                <DoubleAnimation Storyboard.TargetName="border" Storyboard.TargetProperty="(Border.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)" To="0" Duration="0:0:0.2"/>
+                                                                            </Storyboard>
+                                                                        </BeginStoryboard>
+                                                                    </EventTrigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBox.Resources>
+                                        </TextBox>
+                                        <Border x:Name="addDiscount4" Background="#0C1017" CornerRadius="8" Width="25" BorderThickness="0.5" BorderBrush="White" Height="25" Grid.Row="2" MouseLeftButtonDown="addDiscount4_MouseLeftButtonDown">
+                                            <Border.Resources>
+                                                <ScaleTransform x:Key="HoverScale" ScaleX="1" ScaleY="1" />
+                                            </Border.Resources>
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="RenderTransform" Value="{StaticResource HoverScale}" />
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Trigger.EnterActions>
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.05" Duration="0:0:0.2" />
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.05" Duration="0:0:0.2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </Trigger.EnterActions>
+                                                            <Trigger.ExitActions>
+                                                                <BeginStoryboard>
+                                                                    <Storyboard>
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.2" />
+                                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.2" />
+                                                                    </Storyboard>
+                                                                </BeginStoryboard>
+                                                            </Trigger.ExitActions>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock Text="+" Margin="0,0,0,2" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                            
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                            <Border Margin="0,0,0,10" Grid.Column="1" BorderBrush="White" BorderThickness="0.2">
+                                <!--After-->
+                                <!--Before-->
+                                <Grid x:Name="BeforeBuyingPetrol" Visibility="Visible">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="0.1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.Column="0">
+                                        <TextBlock Text="4" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"></TextBlock>
+                                    </Grid>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Border x:Name="Benzin4" Grid.Row="1" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Benzin4_MouseLeftButtonDown">
+                                            <TextBlock Text="Бензин" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <Border x:Name="Diesel4" Grid.Row="3" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Diesel4_MouseLeftButtonDown">
+                                            <TextBlock Text="Дизел" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                        <Border x:Name="Gas4" Grid.Row="5" CornerRadius="8" Background="#0C1017" MouseLeftButtonDown="Gas4_MouseLeftButtonDown">
+                                            <TextBlock Text="Газ" FontSize="15" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.8*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="D:\Downloads\images for GasStation\icons8-oil-storage-tank-96.png" Grid.Row="0" HorizontalAlignment="Left" />
+                        <TextBlock Text="Цистерни" Grid.Column="1" Foreground="White" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </Grid>
+                        
+                    <!--Цистерна 1-->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" x:Name="RefreshData" Background="#FF171E29" Width="30" Height="30" CornerRadius="10" HorizontalAlignment="Right" MouseLeftButtonDown="RefreshData_MouseLeftButtonDown">
+                            <Border.Resources>
+                                <ScaleTransform x:Key="HoverScale" ScaleX="1" ScaleY="1" />
+                            </Border.Resources>
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="RenderTransform" Value="{StaticResource HoverScale}" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.05" Duration="0:0:0.2" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.05" Duration="0:0:0.2" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.EnterActions>
+                                            <Trigger.ExitActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1" Duration="0:0:0.2" />
+                                                        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1" Duration="0:0:0.2" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </Trigger.ExitActions>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Image Source="D:\VisualStudio\Projects\Petrol_Station\Images\icons8-refresh-64.png" Width="20"/>
+                        </Border>
+                        <TextBlock Text="Дизел" VerticalAlignment="Center" Foreground="White" Grid.Row="0" HorizontalAlignment="Center"></TextBlock>
+                        <Grid x:Name="GridProgress1" Grid.Row="1" MouseEnter="GridProgress1_MouseEnter" MouseLeave="GridProgress1_MouseLeave">
+                            <ProgressBar x:Name="ProgressBarDiesel" Grid.Row="1" Foreground="#FF2F98A0" Background="#0C1017" BorderThickness="0" Minimum="0" Maximum="100" Value="45" ></ProgressBar>
+                            <TextBlock x:Name="ProgressPercents1" Text="45%" Visibility="Collapsed" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        </Grid>
+                    </Grid>
+                    <!--Цистерна 2-->
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Бензин" VerticalAlignment="Center" Foreground="White" Grid.Row="0" HorizontalAlignment="Center"></TextBlock>
+                        <Grid x:Name="GridProgress2"  Grid.Row="1" MouseEnter="GridProgress2_MouseEnter" MouseLeave="GridProgress2_MouseLeave">
+                            <ProgressBar x:Name="ProgressBarBenzin"  Foreground="#FF2F98A0" Background="#0C1017" BorderThickness="0" Minimum="0" Maximum="100" Value="15" ></ProgressBar>
+                            <TextBlock  x:Name="ProgressPercents2" Visibility="Collapsed" Text="15%" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        </Grid>
+                    </Grid>
+                    <!--Цистерна 3-->
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="Газ" VerticalAlignment="Center" Foreground="White" Grid.Row="0" HorizontalAlignment="Center"></TextBlock>
+                        <Grid x:Name="GridProgress3"  Grid.Row="1" MouseEnter="GridProgress3_MouseEnter" MouseLeave="GridProgress3_MouseLeave">
+                            <ProgressBar x:Name="ProgressBarGas"  Grid.Row="1" Foreground="#FF2F98A0" Background="#0C1017" BorderThickness="0" Minimum="0" Maximum="100" Value="100" ></ProgressBar>
+                            <TextBlock  x:Name="ProgressPercents3" Text="100%" Visibility="Collapsed" Foreground="White" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

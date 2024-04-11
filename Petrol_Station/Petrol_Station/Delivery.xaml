@@ -1,0 +1,205 @@
+﻿<Window x:Class="Petrol_Station.Delivery"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Petrol_Station"
+        mc:Ignorable="d"
+        WindowStyle= "None"
+        ShowInTaskbar="True"
+        AllowsTransparency="True"
+        Background="Transparent"
+        BorderBrush="Transparent"
+        BorderThickness="0"
+        Title="Petrol Station" Height="600" Width="1080" WindowStartupLocation="CenterScreen" >
+    <Border CornerRadius="50" Background="Transparent" 
+        BorderBrush="Transparent"
+        BorderThickness="0">
+        <StackPanel>
+
+            <StackPanel.Background>
+                <!--<LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#0C1017" Offset="0.584" />
+                </LinearGradientBrush>-->
+                <ImageBrush ImageSource="D:\Users\Pepo's PC\Desktop\home_page.png"></ImageBrush>
+            </StackPanel.Background>
+
+            <Grid Height="20" HorizontalAlignment="Right" Margin="0,3,3,0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="CloseButton" Grid.Column="2" BorderThickness="0" Width="20" Background="Transparent" Foreground="White" Click="CloseButton_Click" >⤬</Button>
+                <Button x:Name="MaxButon" Grid.Column="1" BorderThickness="0" Height="20" Width="20" Background="Transparent" VerticalAlignment="Bottom" Foreground="White" Click="MaxButon_Click" >❐</Button>
+                <Button Grid.Column="0" BorderThickness="0" Width="20" Background="Transparent" Foreground="White" >–</Button>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Margin="10,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Border x:Name="BackButton" Grid.Column="0" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Height="auto" Padding="0,0,0,0" HorizontalAlignment="Left" Width="70" PreviewMouseLeftButtonDown="BackButton_PreviewMouseLeftButtonDown">
+                    <Border.Effect>
+                        <DropShadowEffect  ShadowDepth="6"  Direction="270" Color="Black" Opacity="0.5"/>
+                    </Border.Effect>
+                    <Border.Background>
+                        <!-- Use ImageBrush with a blurred image -->
+                        <ImageBrush ImageSource="D:\Users\Pepo's PC\Desktop\171a22.png" Stretch="Fill" Opacity="0.4"/>
+                    </Border.Background>
+                    <TextBlock FontSize="40" Foreground="#FF2F98A0" Margin="13,0,0,8">⬅</TextBlock>
+
+                </Border>
+                <Image Source="D:\Users\Pepo's PC\Pictures\Work Pictures\petroleood-high-resolution-logo-transparent.png" Grid.Column="1" Margin="340,0,0,0" Height="50" HorizontalAlignment="Center"></Image>
+
+            </Grid>
+            <Border Margin="250,30,250,0" Padding="10,10,10,10" CornerRadius="20">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="9"  Direction="270" Color="Black" Opacity="0.5"/>
+                </Border.Effect>
+                <Border.Background>
+                    <!-- Use ImageBrush with a blurred image -->
+                    <ImageBrush ImageSource="D:\Users\Pepo's PC\Desktop\171a22.png" Stretch="Fill" Opacity="0.5"/>
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Margin="0,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="20">Вид гориво</TextBlock>
+                    <!--<TextBox Grid.Row="0" Grid.Column="1" Background="#0C1017">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>-->
+                    <ComboBox Margin="5,10,50,10" Grid.Row="0" Grid.Column="1" Foreground="White" Background="#FF0C1017">
+                        <ComboBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#0C1017" />
+                        </ComboBox.Resources>
+                        <ComboBoxItem>Бензин</ComboBoxItem>
+                        <ComboBoxItem>Дизел</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox Margin="0,10,70,10"  Grid.Row="0" Grid.Column="1" Background="#0C1017">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <!--Доставчик-->
+                    <TextBlock Margin="0,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="20">Доставчик</TextBlock>
+                    <Grid x:Name="Grid2" Grid.Column="1" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.22*"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox Margin="5,10,0,10" Grid.Row="1" Grid.Column="0" Foreground="White" Background="#FF0C1017">
+                        <ComboBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#0C1017" />
+                        </ComboBox.Resources>
+                        <ComboBoxItem>Бензин</ComboBoxItem>
+                        <ComboBoxItem>Дизел</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox Margin="0,10,20,10"  Grid.Row="1" Grid.Column="0" Background="#0C1017">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                        </TextBox>
+                        <Border Grid.Column="1" VerticalAlignment="Center" BorderBrush="White" BorderThickness="1" Background="#0C1017" CornerRadius="10" Margin="10,10,20,10">
+                            <Border.Effect>
+                                <DropShadowEffect  ShadowDepth="4"  Direction="270" Color="Black" Opacity="0.5"/>
+                            </Border.Effect>
+                            <TextBlock Margin="0,0,0,3" HorizontalAlignment="Center" Foreground="White">+</TextBlock>
+                           <!-- <Border.Background>
+                                Use ImageBrush with a blurred image 
+                                <ImageBrush ImageSource="D:\Users\Pepo's PC\Desktop\171a22.png" Stretch="Fill" Opacity="1"/>
+                            </Border.Background>
+                            -->
+                        </Border>    
+                    </Grid>
+                    <!--Количиство-->
+                    <TextBlock Margin="0,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" Foreground="White" FontSize="20">Количество</TextBlock>
+                    <TextBox Foreground="White" Margin="0,10,50,10" Grid.Row="2" Grid.Column="1" Background="#0C1017">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <!--Доставна цена-->
+                    <TextBlock Margin="0,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" Foreground="White" FontSize="20">Доставна цена</TextBlock>
+                    <TextBox Foreground="White" Margin="0,10,50,10" Grid.Row="3" Grid.Column="1" Background="#0C1017">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <!--Направление-->
+                    <TextBlock Margin="0,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0" Foreground="White" FontSize="20">Направление</TextBlock>
+                    <ComboBox Margin="5,10,50,10" Grid.Row="4" Grid.Column="1" Foreground="White" Background="#FF0C1017">
+                        <ComboBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.WindowBrushKey}" Color="#0C1017" />
+                        </ComboBox.Resources>
+                        <ComboBoxItem>Бензин</ComboBoxItem>
+                        <ComboBoxItem>Дизел</ComboBoxItem>
+                    </ComboBox>
+                    <TextBox Margin="0,10,70,10"  Grid.Row="4" Grid.Column="1" Background="#0C1017">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <!--Рег. номер-->
+                    <TextBlock Margin="0,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0" Foreground="White" FontSize="20">Регистрационен номер</TextBlock>
+                    <TextBox Foreground="White" Margin="0,10,50,10" Grid.Row="5" Grid.Column="1" Background="#0C1017">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <!--Шофьор-->
+                    <TextBlock Margin="0,10,0,10" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="0" Foreground="White" FontSize="20">Шофьор</TextBlock>
+                    <TextBox Foreground="White" Margin="0,10,50,10" Grid.Row="6" Grid.Column="1" Background="#0C1017">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Border Grid.Row="7" Grid.ColumnSpan="2" Background="#FF2F98A0" Margin="200,30,200,10" CornerRadius="10">
+                        <TextBlock FontSize="20" HorizontalAlignment="Center" Foreground="White">Добави</TextBlock>
+                    </Border>
+                </Grid>
+                
+            </Border>
+            
+        </StackPanel>
+    </Border>
+</Window>
